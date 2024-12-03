@@ -1,1 +1,21 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modellierungs Assistent</title>
+</head>
+<body>
+    <h1>Modellierungs Assistent</h1>
+    <button id="fetchMessage">Hole Nachricht</button>
+    <p id="message"></p>
+
+    <script>
+        document.getElementById('fetchMessage').addEventListener('click', async () => {
+            const response = await fetch('http://127.0.0.1:5000/hello');
+            const data = await response.json();
+            document.getElementById('message').textContent = data.message;
+        });
+    </script>
+</body>
+</html>
