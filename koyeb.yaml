@@ -17,3 +17,5 @@ services:
     env:
       - key: FLASK_ENV
         value: production
+    run:
+      command: "python backend.py"
