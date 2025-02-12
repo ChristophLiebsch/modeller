@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from waitress import serve
 
 assistent_backend = Flask(__name__)
 
@@ -6,5 +7,5 @@ assistent_backend = Flask(__name__)
 def hello_world():
     return jsonify({"message": "Hallo Welt, hier ist die API des Modellierungs Assistenten!"})
 
-if __name__ == '__main__':
-    assistent_backend.run(debug=True)
+if __name__ == "__main__":
+    serve(assistent_backend, host="0.0.0.0", port=5000)
