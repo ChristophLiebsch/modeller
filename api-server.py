@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 from waitress import serve
 
 assistent_backend = Flask(__name__)
+CORS(assistent_backend)
 
 @assistent_backend.route('/hello', methods=['GET'])
 def hello_world():
