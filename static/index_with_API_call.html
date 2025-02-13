@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Call Example</title>
+</head>
+<body>
+    <h1>API Call Example</h1>
+    <button id="fetchMessage">Fetch Message</button>
+    <p id="message"></p>
+
+    <script>
+        document.getElementById('fetchMessage').addEventListener('click', async () => {
+            try {
+                <!-- next line needs to be updated to the correct URL of the API-service -->
+                const response = await fetch('https://modeller-qq3s.onrender.com/hello');
+                const data = await response.json();
+                document.getElementById('message').textContent = data.message;
+            } catch (error) {
+                console.error('Error fetching message:', error);
+            }
+        });
+    </script>
+</body>
+</html>
